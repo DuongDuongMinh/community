@@ -13,7 +13,7 @@
   sending_code: boolean,
   code: string
 }
-9. auth/verified-email (userloin) (sent again code) => sending_code= true; +> gửi code cho user và sau khi gửi xong sending_code = null.
+9. /auth/verified-email (userloin) (sent again code) => sending_code= true; +> gửi code cho user và sau khi gửi xong sending_code = null.
     sau đó người nhấn vào 
     check code = 'code in data khoong) nếu không set req.code = null thì báo lỗi ok. 
     //khi code duoc tao. se goi settimeout...(1 khoang thoi gian nao do) se xoa di cai code neu nó hết hạn ý.
@@ -21,7 +21,7 @@
     xong rồi sẽ chuyển hướng tới trang verify_email.
     chuyen toi ahtu/access-token
     
-10. auth/access-token   (userlogin) redirect home.(đã phải đăng nhập rôi) 
+10. /auth/access-token   (userlogin) redirect home.(đã phải đăng nhập rôi) 
    (giả sử trang này người ta sẽ kiểm tra là email đã xác nhận chưa. nếu chưa sẽ về verified-email) nếu rối. thì xét tiếp user_id có token không => nếu có -> chuyển tới trang home.
    null -> create token.
    redirect to home.
@@ -37,7 +37,9 @@
 11. /  home... 
 11.1 /admin/posts
 khi nào xảy ra trường hợp này...
-xét vai trò nếu là khác thì k được đăng bài trong hệ thống dành cho admin... (create post) với nội dùng và vân vân có thêm topic và scope.
+xét vai trò nếu là khác thì k được đăng bài trong hệ thống dành cho admin... (create post) với nội dùng và vân vân thuộc cái domain nào... bài post có thêm domain_id
+mỗi domain sẽ thuộc về 1 topic...
+ thêm nữa có database domain. ( id, name, topic_name) 
 11.2  /posts 
 ngoài ra thì tất cả mọi thành viên thì sẽ chỉ được vào trangcreate với nội dùng và thêm tag(bài viết phải có tag)...
 khi đi qua restful này thì ta sẽ add post vào thêm với database hold(giữ tag nào)...ok.
@@ -49,11 +51,13 @@ khi đi qua restful này thì ta sẽ add post vào thêm với database hold(gi
 
 bài post sẽ có thêm 1 trường là  topic and scope.
 12. /tag/{tagname} => tra ve thong tin bai post theo tag name. ta có tagname.... (lập trình viên, hệ thông, gaming, khac)//cho thanh viên thảo luận.(nếu mà type = 'stories' thì sẽ add bài viết đó tới nhóm  tag.)  (mặc địnuh topic=null và scope = null)
-13. /help  => 
+13. /help  => data help
   - id
   - type: account issue, report a rules violation, report a copy right violation, feedback, other.
   - description.
   - email (cái này trang help không cần đăng nhập, vì lỗi tài khoản sao đăng nhập được.) => cần thông báo từ hệ thống tới người dùng. system-notify.
+  data report for post.
+  
 14. bài post thì cần phải có report. ví như là nội dung spam, người khác sao chép bài post thì sao....(nội dung k hợp với chủ đề)
 
 
