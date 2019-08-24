@@ -6,9 +6,9 @@ api cần là userlist, deletefile, updatefile, removefile...(nếu mà có nhi�
 2. nếu mà đăng nhập bằng facebook và google thì ta lây được mail. nếu có mail rồi thì ta update. nếu chưa có ta tạo mới. Ngoài ra đăng nhập bằng cách này không có password ta phải tự băm password và mã hóa tự động cho nó. ok.
 
 3. Ngoai ra bài post thuộc chủ đề nào nữa.....  tag trong compsace... cntt, mạng, hệ thông, game, khác
-3. /{name}.   (bỏ phần @..... đằng sau cấu trúc @ntnghiavt)(chính là trang profile của người dùng luôn đó.
-5. /settings/password (user dang nhap)(minh se biet user_id) can he thong nhap thong tin can thiet thoi.
-5.1 /settings => update taikhoan, remove taikhoan. (user dang nhap)
+3. /@:name.   (bỏ phđằng sau cấu trúc @ntnghiavt)(chính là trang profile của người dùng luôn đó.
+5. /@:user/settings(user dang nhap)(minh se biet user_id) can he thong nhap thong tin can thiet thoi.
+5.1    => update taikhoan, remove taikhoan. (user dang nhap)
 6. /signup
 7. /login
 9.0.body{
@@ -47,12 +47,12 @@ ngoài ra thì tất cả mọi thành viên thì sẽ chỉ được vào trang
 khi đi qua restful này thì ta sẽ add post vào thêm với database hold(giữ tag nào)...ok.
 
 11.3 /posts/{id}(create post thong thuong, xoa post(gop ca post cua admin..bai thang nao thang do xoa).                                                       update post. find by id;
-11.4 /{name}/{title}-{id}   {title sẽ có construction: all-connections-to-the-world)(@ntnghiavt)
+11.4 /@:name/:title-format-:id {title sẽ có construction: all-connections-to-the-world)(@ntnghiavt)
 
-12.0 /{topic}/{scope} giả sử là (/cntt/laptrinhvien or /cntt/hethong, /kinhte/dautu,/kinh-te/tai-chinh, /kinh-te/ngan-hang)
+12.0 /:topic/:scope giả sử là (/cntt/laptrinhvien or /cntt/hethong, /kinhte/dautu,/kinh-te/tai-chinh, /kinh-te/ngan-hang)
 
 bài post sẽ có thêm 1 trường là  topic and scope.
-12. /tag/{tagname} => tra ve thong tin bai post theo tag name. ta có tagname.... (lập trình viên, hệ thông, gaming, khac)//cho thanh viên thảo luận.(nếu mà type = 'stories' thì sẽ add bài viết đó tới nhóm  tag.)  (mặc địnuh topic=null và scope = null)
+12. /tag/:tagname => tra ve thong tin bai post theo tag name. ta có tagname.... (lập trình viên, hệ thông, gaming, khac)//cho thanh viên thảo luận.(nếu mà type = 'stories' thì sẽ add bài viết đó tới nhóm  tag.)  (mặc địnuh topic=null và scope = null)
 13. /help  => data help
   - id
   - type: account issue, report a rules violation, report a copy right violation, feedback, other.
