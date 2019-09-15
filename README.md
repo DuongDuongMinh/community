@@ -62,4 +62,11 @@ bài post sẽ có thêm 1 trường là  topic and scope.
   
 14. bài post thì cần phải có report. ví như là nội dung spam, người khác sao chép bài post thì sao....(nội dung k hợp với chủ đề)
 
-
+### Server
+ Mỗi 1 server thì là 1 chiếc máy tính đơn lẻ đó. Nếu giả sử mình có thêm 1 file vào trong máy tính hay xóa file đi thì nó chỉ thay đổi trên máy tính của mình thôi.
+ Vậy giờ mình muốn mà khi mình thêm 1 file thì máy tính của mình có thêm và máy tính của tất cả các bạn trong lớp của mình cũng có file đó. Vậy tất cả máy tính đó có điều kiện là cùng 1 lớp. và có 1 sự kết nối với nhau. để mình có khả năng thay đổi máy tính của bạn, Giống với điều khiển từ xa vậy...
+ 
+ ==> khi mình sẽ like 1 bài comment thì sẽ hiển thị ở máy tính của mình(server). Nhưng máy tính của bạn mình sẽ k có(server).
+ vậy mình sẽ phải có kết nối chung giữa minh với bạn(các bạn mình) là cùng ở trên trang http://community...
+ vậy  tất cả những ai mà đang ở trên cái trang này sẽ nhận được sự thay đổi, à đều nhìn thấy hiển thị cái bài like dó....hihi...ok vậy là xong. 
+ 
